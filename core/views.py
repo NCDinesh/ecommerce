@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from products.models import product
+from .models import product
 
 def index(request):
     st=""
@@ -10,7 +10,7 @@ def index(request):
     #     if st!=None:
     #         servicedata = service.objects.filter(service_title__icontains=st)
     data={
-        'proudctdata':productdata
+        'productdata':productdata
     }
     return render(request,"index.html",data)
 
