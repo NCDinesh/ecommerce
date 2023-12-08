@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><e-commerce></e-commerce></title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
 </head>
 
 <body>
     <!-- navbar section -->
 
     <section id="header">
-        <a href="#"><img src="static/products/logo.png" alt="" class="logo"></a>
+        <a href="#"><img src="static/prodSucts/logo.png" alt="" class="logo"></a>
         <div>
             <ul id="navbar">
                 <li><a  href="/">Home</a></li>
-                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a class="active" href="shop">Shop</a></li>
                 <li><a href="blog">Blog</a></li>
                 <li><a href="about">About</a></li>
                 <li><a href="contact">Contact</a></li>
@@ -47,327 +48,68 @@
 
 
         <div class="pro-container">
+
+            {% for n in productdata %}
+           
             <div class="pro" onclick="window.location.href='sproduct.html'">
-                <img src="static/product/f1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                
+                    <img src="/media/{{ n.product_img }}">
+                    <div class="des">
+                        <span>{{ n.product_company }}</span>
+                        <h5>{{ n.product_name }}</h5>
+                        <h4>${{ n.product_price }}</h4>
                     </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
+                    <a href="#"><i class="bi bi-cart cart"></i></a>
+                 
             </div>
-
-            <div class="pro"  onclick="window.location.href='sproduct.html'">
-                <img src="static/product/f2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro"  onclick="window.location.href='sproduct.html'">
-                <img src="static/product/f3.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro"  onclick="window.location.href='sproduct.html'">
-                <img src="static/product/f4.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro" >
-                <img src="static/product/f5.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/f6.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/f7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-
-            <div class="pro">
-                <img src="static/product/f8.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
+                {% endfor %}
+            
+            
         
-
-
-
-   
-
-
-    <!-- product2 section -->
-   
-            <div class="pro">
-                <img src="static/product/n1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+{% comment %} 
+            <!-- product2 section -->
+                {% for n in productdata %}
+                <div class="pro">
+                    <img src="/media/{{ n.product_img }}">
+                    <div class="des">
+                        <span>{{ n.product_company }}</span>
+                        <h5>{{ n.product_name }}</h5>
+                        <h4>${{ n.product_price }}</h4>
                     </div>
-                    <h4>$78</h4>
+                    <a href="#"><i class="bi bi-cart cart"></i></a>
+                    
+                
                 </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-            <div class="pro">
-                <img src="static/product/n2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/n3.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/n4.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/n5.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/n6.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
-
-            <div class="pro">
-                <img src="static/product/n7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
+                {% endfor %} {% endcomment %}
 
             
-            <div class="pro">
-                <img src="static/product/n8.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronut T-Shirts</h5>
-                    <div class="star">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="bi bi-cart cart"></i></a>
-
-            </div>
-
         </div>
 
     </section>
-
-
-    <section id="pagination" class="section-p1" >
+<div class="paginator">
+	
+		{% if productdata.has_previous %}
+		
+		<a href="shop?page={{ product.previous_page_number }}" class="prev">Previous</a>
+		
+	
+		{% endif %}
+		<a href="shop?page=1" >First</a>
+		{% for n in totalpagelist %}
+		<a class="{% if request.path == "shop/?page={{n}}" %} active {% endif %}" href="shop?page={{n}}" >{{n}}</a>
+		{% endfor %}
+		<a href="shop?page={{lastpage}}" class="page">Last</a>
+	
+		
+		{% if productdata.has_next %}
+		<a href="shop?page={{ productdata.next_page_number }}" class="next">Next</a>
+		{% endif %}
+	  </div> 
+    {% comment %} <section id="pagination" class="section-p1" >
         <a href="#">1</a>
         <a href="#">2</a>
         <a href="#"><i class="bi bi-arrow-right"></i></a>
-    </section>
+    </section> {% endcomment %}
 
     <!-- newsletter section -->
 

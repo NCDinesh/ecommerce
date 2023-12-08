@@ -1,16 +1,16 @@
 from django.shortcuts import render
-from .models import product
-
+from .models import product,newarrival
+from django.core.paginator import Paginator
 def index(request):
-    st=""
+   
     data={}
     productdata = product.objects.all().order_by('-id')
-    # if request.method=="POST":
-    #     st=request.POST['servicename']
-    #     if st!=None:
-    #         servicedata = service.objects.filter(service_title__icontains=st)
+    new = newarrival.objects.all().order_by('-id')
+
+   
     data={
-        'productdata':productdata
+        'productdata':productdata,
+        'new':new,
     }
     return render(request,"index.html",data)
 
@@ -30,7 +30,24 @@ def contact(request):
     return render(request,"contact.html")
 
 def shop(request):
-    return render(request,"shop.html")
+    data={}
+    productdata = product.objects.all().order_by('-id')
+    new = newarrival.objects.all().order_by('-id')
+    
+    paginator=Paginator(productdata,3)
+    page_number=request.GET.get('page')
+    productdatafinal=paginator.get_page(page_number)
+    totalpage=productdatafinal.paginator.num_pages
+
+   
+    data={
+        'productdata':productdatafinal,
+        'new':new,
+        'lastpage':totalpage,
+        'totalpagelist':[n+1 for n in range(totalpage)] 
+
+    }
+    return render(request,"shop.html",data)
 
 
 
